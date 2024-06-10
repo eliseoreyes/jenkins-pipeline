@@ -21,10 +21,5 @@ pipeline {
                 sh "echo 'Hello world'"
             }   
         }
-        stage("Printing global enviromment variables"){
-            steps {
-                echo "${OWNER_NAME}"
-            }
-        }
     }
 }
