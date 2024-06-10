@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    environment {
+        USERNAME="Eliseo"
+    }
+    stages {
+        stage("Hello 1"){
+            steps {
+                echo "Hello from greetings 1"
+            }
+        }
+        stage("Hello 2"){
+            steps {
+                echo "Hola desde saludo 2 paso 2"
+            }
+        }
+        stage("Imprimir variabe de entorno"){
+            steps {
+                echo "${env.USERNAME}"
+                
+                sh "echo 'Hello world'"
+            }   
+        }
+        stage("Printing global enviromment variables"){
+            steps {
+                echo "${OWNER_NAME}"
+            }
+        }
+    }
+}
